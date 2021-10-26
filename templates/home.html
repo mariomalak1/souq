@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{%block title%} M&G products | home {%endblock%}
+
+{%block area%} 
+
+ 
+{%endblock%}
+
+{% block body %}
+<div class="container">
+<div class="row">
+    {% for item in items %}
+    <div class="col-lg-4">
+        <div>
+            <img class="thumbnail" src="{{item.imgUrl}}">
+        </div>
+        <div class="box-element product">
+        <h6><strong>{{item.description}}</strong></h6>
+            <hr>
+            <a href="{% url 'choose_pro' item.pk%}" class="btn btn-outline-success"> المزيد </a>
+            <h4 style="display:inline-block; float:right;"><strong class="prise"> {{item.prise}}  : سعر المتر  </strong></h4>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{%endblock%}
+
+
+
+
+
+
+
+
+
+

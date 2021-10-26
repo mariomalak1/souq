@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{%block title%} M&G products | Order Done {%endblock%}
+
+{%block area%} 
+
+ 
+{%endblock%}
+
+{% block body %}
+ <div class="alert alert-success" role="alert">
+  سيم التواصل معاك خلال 24 ساعة :) 
+</div>
+&nbsp; &nbsp;
+<a href="{% url 'home' %}" class="btn btn-secondary" id=""> الي الصفحة الرئسية   </a>
+{% endblock %}
+
+contact = forms.IntegerField(widget=forms.TextInput(attrs={'class': 'w3-input'}), required=True)

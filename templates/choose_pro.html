@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{%block title%} M&G products | Order {%endblock%}
+
+{% block area%} 
+
+{%endblock%}
+
+{% block body %}
+<div class= "container">
+    <ol class="breadcrumb my-4 dark" id="zs">
+        <li class="breadcrumb-item "><a id="hre" href="{% url 'home' %}"> الصفحة الرئسية </a> </li>
+        <li class="breadcrumb-item active"> طلب </li> 
+    </ol>    
+</div>    
+<div class="vv">
+    <div class="container">
+        <div class="card" style="width: 100%; height: 25%;">
+            <img src="{{items.imgUrl}}" class="card-img-top" alt="img">
+            <div class="card-body">
+                <strong class=""><h4> سعر المتر :</h4> {{items.prise}} </strong>
+                <br>
+                <hr>
+                <strong class="card-title"><h4> وصف :</h4><p class="cart-text">{{items.description}}</p></strong>
+                <hr>
+                <form method="POST" name="form1">
+                    {% csrf_token %}
+                    <strong><label for="meters"><h5> عدد الامتار <h5></label></strong>
+                    <input type="number" class="form-control" defualt="0" min="1" max="1000000" id="meters" name="number_meters" required>
+                    <br>
+                    <hr>
+                    <strong><label for="phone"><h5>رقم الهاتف <h5></label></strong>
+                    <input type="text" class="form-control" maxlength="11" id="phone" name="number_phone" required>
+                    <br>
+                    <br>
+                    <div class="btn-group">
+                        <button type="submit" class="btn btn-primary" id="sub"> اطلب </button>
+                </form>
+                    &nbsp; &nbsp; &nbsp;
+                        <button type="button" class="btn btn-warning" onclick=
+                        "
+                        var x = {{items.prise}} ;
+                        var y = document.getElementById('meters').value ;
+                        var z = parseInt(x) * parseInt(y) ;
+                        document.getElementById('div').innerHTML = z;">
+                         احسب الاجمالي </button>
+                    </div>
+                    <hr> 
+                <strong><h4> الاجمالي :<p id="div"></p></h4><h5> 
+                </h5><p class="cart-text"></p></strong>
+            </div>
+        </div>
+    </div>
+</div>  
+
+<script type="text/javascript">
+if (document.getElementById('meters').value == '')&&(document.getElementById('phone').value == ''){
+    alert('marrioakfpoi');
+}
+Function myfunction() {
+
+}
+</script> 
+{%endblock%}
+
+var y =document.getElementById("meters") ;
+var x = "{{items.prise}}" ;
+var z = (+y) * (+x) ;
+alert(z);

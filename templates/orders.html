@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{%block title%} M&G products | Orders {%endblock%}
+
+{%block area%} 
+
+ 
+{%endblock%}
+
+{% block body %}
+<div class= "container">
+    <ol class="breadcrumb my-4 dark" id="zs">
+        <li class="breadcrumb-item "><a id="hre" href="{% url 'home' %}"> الصفحة الرئسية </a> </li>
+        <li class="breadcrumb-item active"> الطلبات </li> 
+    </ol>   
+<br>
+<div class="container">
+    <table class="table"> 
+        <thead class="thead-dark">
+            <tr>
+                <th> المنتج </th>
+                <th> عدد الامتار </th>
+                <th> طلب من </th>
+                <th> تاريخ الطلب </th>
+                <th> رقم الهاتف </th>
+            </tr>
+        <thead>  
+
+{%for ite in pro%}  
+{% if ite.complete == False %}
+        <tbody>
+            <tr>
+               <td><img src="{{ite.product.imgUrl}}" width="50%"></td>
+                <td>{{ite.num_meters}}</td>
+                <td>{{ite.created_by}}</td>
+                <td>{{ite.created_dt}}</td>
+                <td>{{ite.contact}}</td>
+            </tr>
+{%endif%}   
+         
+{%endfor%}
+        </tbody>
+    </table>
+</div>
+{%endblock%}
+navbar-brand
+
+

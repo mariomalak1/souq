@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{%block title%} M&G products | home {%endblock%}
+
+{%block area%} 
+
+ 
+{%endblock%}
+
+{% block body %}
+<div class= "container">
+    <ol class="breadcrumb my-4 dark" id="zs">
+        <li class="breadcrumb-item "><a id="hre" href="{% url 'home' %}"> الصفحة الرئسية </a> </li>
+        <li class="breadcrumb-item active"> حسابي </li> 
+    </ol>    
+</div>   
+<div class="container">
+<form method="POST" novalidate>
+    {%csrf_token%}
+    {% include 'includes/form.html' %}
+        <button type="submit" class="btn btn-success" id="sub"> حفظ التغيرات  </button>
+    </form>
+</div>   
+{%endblock%}
+
