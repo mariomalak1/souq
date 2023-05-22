@@ -39,9 +39,11 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-   # 'widget_tweaks',
+   
     'myapp',
     'accounts',
+
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -77,17 +79,23 @@ TEMPLATES = [
 WSGI_APPLICATION = 'end.wsgi.application'
 
 
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'rokham',
-        'USER': 'postgres',
-        'PASSWORD': 'mariomalak123',
-        'HSOT': 'localhost',
-        'PORT': '5432'
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'rokham.db',
+        #'USER': 'postgres',
+        #'PASSWORD': 'mariomalak123',
+        #'HSOT': 'localhost',
+        #'PORT': '5432'
     }
 }
 

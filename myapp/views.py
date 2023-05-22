@@ -11,7 +11,7 @@ from django.db.models import Count
 from django.http import HttpResponse,Http404
 
 # Create your views here.
-@login_required
+
 def home(request):
     items = Product.objects.all()
     return render(request,'home.html',{'items':items})

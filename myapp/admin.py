@@ -10,7 +10,7 @@ admin.site.site_header ="M&G product"
 
 class Product_Admin(admin.ModelAdmin):
     def photo_tag(self,obj):
-        return format_html(f'<img src = "/media/{obj.image]}" style= "height:200px;width:80px">')
+        return format_html(f'<img src = "/media/{obj.image}" style= "height:200px;width:80px">')
 
 
 class Order_Admin(admin.ModelAdmin):
